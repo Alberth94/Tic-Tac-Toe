@@ -20,6 +20,7 @@ function checkSquares(id) {
 }
 
 function switchPlayer(id) {
+    document.getElementById(id).innerHTML = curentPlayer;
     if (curentPlayer === "X") {
         document.getElementById('player').innerText = "O's turn";
         curentPlayer = "O";
@@ -27,7 +28,6 @@ function switchPlayer(id) {
         document.getElementById('player').innerText = "X,s turn";
         curentPlayer = "X";
     }
-    document.getElementById(id).innerHTML = curentPlayer;
     ++fullSquares;
      winOrDraw();
 }
