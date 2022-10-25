@@ -22,17 +22,14 @@ function checkSquares(id) {
 function switchPlayer(id) {
     if (curentPlayer === "X") {
         document.getElementById('player').innerText = "O's turn";
-        document.getElementById(id).innerHTML = curentPlayer;
-        ++fullSquares;
-        winOrDraw();
         curentPlayer = "O";
     } else {
         document.getElementById('player').innerText = "X,s turn";
-        document.getElementById(id).innerHTML = curentPlayer;
-        ++fullSquares;
-        winOrDraw();
         curentPlayer = "X";
     }
+    document.getElementById(id).innerHTML = curentPlayer;
+    ++fullSquares;
+     winOrDraw();
 }
 
 function winOrDraw() {
