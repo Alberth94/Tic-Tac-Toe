@@ -21,15 +21,15 @@ function checkSquares(id) {
 
 function switchPlayer(id) {
     document.getElementById(id).innerHTML = curentPlayer;
+    ++fullSquares;
+    winOrDraw();
     if (curentPlayer === "X") {
         document.getElementById('player').innerText = "O's turn";
         curentPlayer = "O";
-    } else {
-        document.getElementById('player').innerText = "X,s turn";
-        curentPlayer = "X";
-    }
-    ++fullSquares;
-     winOrDraw();
+        return;
+    } 
+    document.getElementById('player').innerText = "X,s turn";
+    curentPlayer = "X";
 }
 
 function winOrDraw() {
