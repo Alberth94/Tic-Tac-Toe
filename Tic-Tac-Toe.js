@@ -24,12 +24,11 @@ function switchPlayer(id) {
     ++fullSquares;
     winOrDraw();
     if (currentPlayer === "X") {
-        document.getElementById('player').innerText = "Now it is " + currentPlayer + " turn";
         currentPlayer = "O";
-        return;
-    } 
+    } else {
+        currentPlayer = "X";
+    }
     document.getElementById('player').innerText = "Now it is " + currentPlayer + " turn";
-    currentPlayer = "X";
 }
 
 function winOrDraw() {
