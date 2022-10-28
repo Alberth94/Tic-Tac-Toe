@@ -24,7 +24,7 @@ function switchPlayer(id) {
     ++fullSquares;
     winOrDraw();
     if (curentPlayer === "X") {
-        document.getElementById('player').innerText = "O's turn";
+        document.getElementById('player').innerText = "Now it is " + currentPlayer + " turn";
         curentPlayer = "O";
         return;
     } 
