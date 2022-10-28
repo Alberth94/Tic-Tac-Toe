@@ -28,7 +28,7 @@ function switchPlayer(id) {
         curentPlayer = "O";
         return;
     } 
-    document.getElementById('player').innerText = "X,s turn";
+    document.getElementById('player').innerText = "Now it is " + currentPlayer + " turn";
     curentPlayer = "X";
 }
 
