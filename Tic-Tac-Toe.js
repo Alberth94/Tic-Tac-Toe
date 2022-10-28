@@ -1,5 +1,5 @@
 let win = 0;
-let curentPlayer = "X";
+let currentPlayer = "X";
 const squares =  document.querySelectorAll(".square");
 let fullSquares = 0;
 const WINNING_COMBINATIONS = [
@@ -20,21 +20,21 @@ function checkSquares(id) {
 }
 
 function switchPlayer(id) {
-    document.getElementById(id).innerHTML = curentPlayer;
+    document.getElementById(id).innerHTML = currentPlayer;
     ++fullSquares;
     winOrDraw();
-    if (curentPlayer === "X") {
+    if (currentPlayer === "X") {
         document.getElementById('player').innerText = "Now it is " + currentPlayer + " turn";
-        curentPlayer = "O";
+        currentPlayer = "O";
         return;
     } 
     document.getElementById('player').innerText = "Now it is " + currentPlayer + " turn";
-    curentPlayer = "X";
+    currentPlayer = "X";
 }
 
 function winOrDraw() {
      WINNING_COMBINATIONS.forEach(function(elements) {
-        let check = elements.every(i => squares[i].innerHTML === curentPlayer);
+        let check = elements.every(i => squares[i].innerHTML === currentPlayer);
         if (check) {
             ++win;
             message();
@@ -45,7 +45,7 @@ function winOrDraw() {
 
 function message () {
     if (win === 1) {
-        document.getElementById('message').innerHTML = curentPlayer + " Wins! Press restart to play another round."; 
+        document.getElementById('message').innerHTML = currentPlayer + " Wins! Press restart to play another round."; 
         document.getElementById("gameBoard").remove();   
     } else if (fullSquares === 9 && win === 0) {
         document.getElementById('message').innerHTML = " It's a draw! Press restart to play another round."; 
